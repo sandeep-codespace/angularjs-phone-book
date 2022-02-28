@@ -41,6 +41,11 @@ class PhoneBookCtrl {
   }
   editContact(index) {
     let ind = index;
+    this.showMe = function (indx) {
+      if (indx == ind) {
+        return true;
+      }
+    };
   }
   deleteContact(index) {
     this.contacts.splice(index, 1);
@@ -52,6 +57,11 @@ class PhoneBookCtrl {
   }
   save(index) {
     let ind = index;
+    this.showMe = function (indx) {
+      if (indx == ind) {
+        return false;
+      }
+    };
   }
 }
 export default PhoneBookCtrl;
