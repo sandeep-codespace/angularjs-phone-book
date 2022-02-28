@@ -1,7 +1,9 @@
 class PhoneBookCtrl {
   constructor($log, $http) {
     'ngInject';
-    this.name = 'spme test value';
+    this.firstName = '';
+    this.lastName = '';
+    this.phone = '';
     this.$log = $log;
     this.$http = $http;
     this.srchTxt = '';
@@ -21,16 +23,21 @@ class PhoneBookCtrl {
   }
   addNewContact() {
     var newId = Math.max(...this.contacts.map((o) => o.id), 0) + 1;
-    var contact = {
-      firstName: this.firstName,
-      lastName: this.lastName,
-      phone: this.phone,
-      id: newId,
-    };
-    this.contacts.push(contact);
-    this.firstName = '';
-    this.lastName = '';
-    this.phone = '';
+
+    if (this.firstName && this.lastName && this.phone) {
+      var contact = {
+        firstName: this.firstName,
+        lastName: this.lastName,
+        phone: this.phone,
+        id: newId,
+      };
+      this.contacts.push(contact);
+      this.firstName = '';
+      this.lastName = '';
+      this.phone = '';
+    } else {
+      alert('Please enter required and valid values to add new contact');
+    }
   }
   getContactList(contactService) {
     return contactService.getContacts().then((data) => {
