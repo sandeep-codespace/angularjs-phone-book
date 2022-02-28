@@ -27,11 +27,11 @@
           </thead>
           <tbody>
             <tr ng-repeat="contact in vm.contacts | filter:vm.srchTxt; ">
-              <td><span ng-hide="contact.isEditing">{{contact.firstName}}</span><input text="text" required maxlength="20" class="form-control input-sm"
+              <td><span ng-hide="contact.isEditing">{{contact.firstName}}</span><input text="text" class="form-control input-sm"
                   ng-model="contact.firstName" ng-show="contact.isEditing"></td>
-                  <td><span ng-hide="contact.isEditing">{{contact.lastName}}</span><input text="text" required maxlength="20"  class="form-control input-sm"
+                  <td><span ng-hide="contact.isEditing">{{contact.lastName}}</span><input text="text" class="form-control input-sm"
                       ng-model="contact.lastName" ng-show="contact.isEditing"></td>
-              <td><span ng-hide="contact.isEditing">{{contact.phone}}</span><input required maxlength="10"  text="text" class="form-control input-sm" pattern="[0-9]"
+              <td><span ng-hide="contact.isEditing">{{contact.phone}}</span><input text="text" class="form-control input-sm"
                   ng-model="contact.phone" ng-show="contact.isEditing"></td>
               <td><a href="#" ng-click="vm.deleteContact($index)"><span class="glyphicon glyphicon-trash"></span>&nbsp;</a>/<a
                   href="#" ng-click="vm.editContact(contact)" ng-hide="contact.isEditing"> <span
