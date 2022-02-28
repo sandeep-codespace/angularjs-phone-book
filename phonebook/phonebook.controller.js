@@ -39,13 +39,8 @@ class PhoneBookCtrl {
       return this.contacts;
     });
   }
-  editContact(index) {
-    let ind = index;
-    this.showMe = function (indx) {
-      if (indx == ind) {
-        return true;
-      }
-    };
+  editContact(contact) {
+    contact.isEditing = true;
   }
   deleteContact(index) {
     this.contacts.splice(index, 1);
@@ -55,12 +50,8 @@ class PhoneBookCtrl {
       return true;
     }
   }
-  save(index) {
-    let ind = index;
-    this.showMe = function (indx) {
-      if (indx == ind) {
-        return false;
-      }
+  save(contact) {
+    contact.isEditing = false;
     };
   }
 }
