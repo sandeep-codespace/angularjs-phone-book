@@ -3,7 +3,6 @@
     <div class="panel-heading">
       <div class="panel-title">
         <h3 class="text-center">Phone Book</h3>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addContact">Add Contact</button>
       </div>
     </div>
     <div class="panel-body">
@@ -43,31 +42,22 @@
         </table>
       </div>
     </div>
+    <div class="panel-footer">
+      <form class="form-inline">
+        <div class="form-group">
+          <span>First Name：</span>
+          <input type="text" class="form-control" ng-model="vm.firstName">
+        </div>
+        <div class="form-group">
+          <span>Last Name：</span>
+          <input type="text" class="form-control" ng-model="vm.lastName">
+        </div>
+        <div class="form-group">
+          <span>Phone：</span>
+          <input type="text" class="form-control" ng-model="vm.phone">
+        </div>
+        <input type="button" class="btn btn-primary btn-sm" value="Add New Conatact" ng-click="vm.addNewContact()">
+      </form>
+    </div>
   </div>
-</div>
-<div class="modal-content">
-<div class="modal-header">
-  <button type="button" class="close" data-dismiss="modal">&times;</button>
-  <h4 class="modal-title">Add New Contact</h4>
-</div>
-<div class="modal-body">
-<form>
-<div class="form-group">
-  <span>First Name：</span>
-  <input type="text" class="form-control" ng-model="vm.firstName">
-</div>
-<div class="form-group">
-  <span>Last Name：</span>
-  <input type="text" class="form-control" ng-model="vm.lastName">
-</div>
-<div class="form-group">
-  <span>Phone：</span>
-  <input type="text" class="form-control" ng-model="vm.phone">
-</div>
-<input type="button" data-dismiss="modal" class="btn btn-primary btn-sm" value="Add New Conatact" ng-click="vm.addNewContact()">
-</form>
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-</div>
 </div>
