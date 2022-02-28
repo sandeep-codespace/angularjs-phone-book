@@ -52,7 +52,6 @@ class PhoneBookCtrl {
   }
   save(contact) {
     contact.isEditing = false;
-    };
   }
 }
 export default PhoneBookCtrl;
